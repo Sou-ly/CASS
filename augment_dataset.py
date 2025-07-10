@@ -178,7 +178,7 @@ def process_dataset(df: pd.DataFrame, model: GenerativeModel, batch_size: int = 
                     f.write(' '.join(cuda_result['inputs']))
                 
                 # Save modified CUDA source
-                cuda_filename = f"cuda_source_{sample_num}.cpp"
+                cuda_filename = f"cuda_source_{sample_num}.cu"
                 cuda_path = os.path.join(cuda_dir, cuda_filename)
                 with open(cuda_path, 'w') as f:
                     f.write(cuda_result['modified_cuda'])

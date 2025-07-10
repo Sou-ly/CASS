@@ -94,7 +94,7 @@ The script uses multiprocessing to speed up Gemini API calls:
 
 The script creates the following files in the output folder:
 - `augmented_dataset.csv`: CSV format of the processed dataset with extracted inputs
-- `cuda_sources/`: Directory containing modified CUDA source files (cuda_source_1.cpp, cuda_source_2.cpp, etc.)
+- `cuda_sources/`: Directory containing modified CUDA source files (cuda_source_1.cu, cuda_source_2.cu, etc.)
 - `amd_sources/`: Directory containing modified AMD source files (amd_source_1.cpp, amd_source_2.cpp, etc.)
 - `inputs/`: Directory containing input files (input_1.txt, input_2.txt, etc.) with extracted hardcoded values
 
@@ -108,8 +108,8 @@ The script creates the following files in the output folder:
 output/
 ├── augmented_dataset.csv          # Dataset with extracted inputs
 ├── cuda_sources/
-│   ├── cuda_source_1.cpp         # Modified CUDA source for sample 1
-│   ├── cuda_source_2.cpp         # Modified CUDA source for sample 2
+│   ├── cuda_source_1.cu          # Modified CUDA source for sample 1
+│   ├── cuda_source_2.cu          # Modified CUDA source for sample 2
 │   └── ...
 ├── amd_sources/
 │   ├── amd_source_1.cpp          # Modified AMD source for sample 1
@@ -127,7 +127,7 @@ After processing, you can compile and run the programs with their extracted inpu
 
 ```bash
 # Compile the CUDA program
-nvcc cuda_source_1.cpp -o cuda_program_1
+nvcc cuda_source_1.cu -o cuda_program_1
 
 # Run with extracted inputs
 ./cuda_program_1 $(cat input_1.txt)
