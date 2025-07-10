@@ -1,0 +1,5 @@
+pandas
+datasets
+google-generativeai
+huggingface-hub
+python-dotenv
